@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #33404d;
+}
+
+.title {
+    padding: 10px;
+    color: aqua;
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.options-bar {
+    width: 300px;
+
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.btn-info {
+    color: aqua;
+}
+
+
+.tb-back {
+    border-radius: 1px;
+    background-color: #33404d;
+}
+
+.rec-table {
+
+    margin: 0 auto;
+    width: 700px;
+
+
+}
+
+.table {
+
+}
+
+thead {
+    border: #33404d 2px solid;
+}
+
+tbody {
+    border: #33404d 2px solid;
+}

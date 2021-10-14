@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/paintings.css') }}">
+</head>
+<body>
+<div class="header">
+    <h1 class="title">Welcome {{ session['first_name'] }}!!!</h1>
+    <div class="options-bar">
+        <form class="options">
+            <button class="btn btn-primary" formaction="/paintings/new">Create a painting</button>
+            <button class="btn btn-info" formaction="/logout">Logout</button>
+        </form>
+    </div>
+</div>
+<div class="tb-back">
+    <div class="rec-table">
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for painting in data %}
+                <tr>
+                    <th>{{ painting.painting_name }}</th>
+                    <th>{{ painting.first_name + " " + painting.last_name }}</th>
+
+                    {% if painting.painting_user_id == session['user_id'] %}
+                        <form>
+                            <th>
+                                <button class="btn btn-success" formaction="/show/{{ painting.painting_id }}">View
+                                    Information
+                                </button>
+                                <button class="btn btn-primary" name="edit" value="{{ painting.painting_id }}"
+                                        formmethod="post" formaction="/toggleEdit">Edit
+                                </button>
+                                <button class="btn btn-danger" value="{{ painting.painting_id }}" name="delete"
+                                        formmethod="post" formaction="/delete">Delete
+                                </button>
+                            </th>
+                        </form>
+                    {% else %}
+                        <form>
+                            <th>
+                                <button class="btn btn-success" formaction="/show/{{ painting.painting_id }}">View
+                                    Information
+                                </button>
+                            </th>
+                        </form>
+
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

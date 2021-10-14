@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+}
+
+.registration-container-title {
+    color: blue;
+
+}
+
+.registration-container {
+    background-color: #33404d;
+    padding: 20px;
+    width: 300px;
+    color: aqua;
+
+}
+
+.login-container-title {
+    color: mediumseagreen;
+
+
+}
+
+.login-container {
+    background-color: #33404d;
+    padding: 20px;
+    width: 300px;
+    color: aqua;
+}
+
+.spacer {
+    margin-top: 10px;
+}
+
+.spacer-input {
+    margin-top: 5px ;
+}
